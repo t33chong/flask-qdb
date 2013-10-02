@@ -5,9 +5,10 @@
 </head>
 <body>
     {% if quote %}
-        <h1>{{ quote }}</h1>
+        <p>Quote:<br>{{ quote['text'] }}</p>
+        <p>Submitted by {{ quote['author'] }} on {{ quote['time'] }}.</p>
     {% else %}
-        <h1>Hello World!</h1>
+        <p>Error: quote not found.</p>
     {% endif %}
 </body>
 </html>
