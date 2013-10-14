@@ -1,14 +1,26 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Quote Database</title>
-</head>
-<body>
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block title %}Quote Database{% endblock %}
+
+{% block navbar %}
+<div class="navbar navbar-fixed-top">
+  <!-- ... -->
+</div>
+{% endblock %}
+
+{% block content %}
+  <h1>Hello, Bootstrap</h1>
+{% endblock %}
+
+{% block body %}
     {% if quote %}
-        <p>Quote:<br>{{ quote['text'] }}</p>
+        <p>{{ quote['text'] }}</p>
         <p>Submitted by {{ quote['author'] }} on {{ quote['time'] }}.</p>
+        <p>Tags: {{ quote['tags'] }}</p>
+        <p>Score: {{ quote['score'] }} ({{ quote['upvotes'] }}+/{{ quote['downvotes'] }}-)</p>
     {% else %}
         <p>Error: quote not found.</p>
     {% endif %}
-</body>
-</html>
+
+    <p><a href="/qdb/submit/">Submit a quote here</a></p>
+{% endblock %}

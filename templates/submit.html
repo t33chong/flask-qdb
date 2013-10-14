@@ -1,0 +1,17 @@
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block title %}Quote Database: Submit{% endblock %}
+
+{% block navbar %}
+<div class="navbar navbar-fixed-top">
+  <!-- ... -->
+</div>
+{% endblock %}
+
+{% block body %}
+    <h1>Submit a quote</h1>
+
+    <form method=post action="/qdb/submitted/">
+        {{ wtf.quick_form(form) }}
+    </form>
+{% endblock %}
